@@ -33,9 +33,9 @@ Key Points:
 #### Tools:
 - Python / Jupyter
 - requests https://pypi.org/project/requests/
+- JSON https://docs.python.org/es/3/library/json.html
 
 
 ## Data transformation: 
 Create a python script that will convert the previously generated JSON files into flattened CSV files.
-
 Alternatively, this exercise can be done with Penthaho Community Edition.
