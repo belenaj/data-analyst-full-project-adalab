@@ -9,7 +9,7 @@
 # - Table DDLs (Create table statements) in the folder sql/ddl/
 # - Python code that creates the tables and ingests the data into the tables
 
-# In[ ]:
+# In[2]:
 
 
 # INSTALL LIBRARIES
@@ -18,9 +18,10 @@
 # !pip install python-dotenv
 # !pip install mysql-connector
 # !pip install mysql-connector-python
+# pip install nbconvert
 
 
-# In[2]:
+# In[4]:
 
 
 # IMPORT LIBRARIES
@@ -58,7 +59,7 @@ load_dotenv()
 
 # ## File opening
 
-# In[3]:
+# In[5]:
 
 
 # This is a function that reads the CSV file and returns the resulting DataFrame.
@@ -76,28 +77,28 @@ def open_file(
 
 # ``Teams``
 
-# In[4]:
+# In[6]:
 
 
-df_teams = open_file("../data/teams/", "teams")
+df_teams = open_file("../sample/data/", "teams")
 df_teams.head()
 
 
 # ``Games``
 
-# In[6]:
+# In[7]:
 
 
-df_games = open_file("../data/games/", "games")
+df_games = open_file("../sample/data/", "games")
 df_games.head()
 
 
 # ``Players``
 
-# In[7]:
+# In[8]:
 
 
-df_players = open_file("../data/players/", "players")
+df_players = open_file("../sample/data/", "players")
 df_players.head()
 
 

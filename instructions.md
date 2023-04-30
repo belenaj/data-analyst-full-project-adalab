@@ -112,8 +112,7 @@ os.getenv() is a method in the os module in Python that retrieves the value of a
     2. Navigate to the "notebooks" folder using the cd command.
 
     3. Run the following command:
-    jupyter nbconvert --to python 1.data_collection.ipynb 2.data_preparation.ipynb 3.data_ingestion.ipynb
-
+    
     This command will convert the specified Jupyter notebooks to Python scripts.
 
     Note: If you have multiple Jupyter notebooks in the "notebooks" folder and you want to convert them all to Python scripts, you can use the * wildcard character. For example:
