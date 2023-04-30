@@ -1,0 +1,16 @@
+CREATE TABLE IF NOT EXISTS table_players (
+id INT NOT NULL ,
+first_name VARCHAR(255),
+height_feet VARCHAR(255),
+height_inches VARCHAR(255),
+last_name VARCHAR(255),
+position VARCHAR(255),
+weight_pounds VARCHAR(255),
+`team.id` INT,
+`team.abbreviation` VARCHAR(255),
+`team.city` VARCHAR(255),
+`team.conference` VARCHAR(255),
+`team.division` VARCHAR(255),
+`team.full_name` VARCHAR(255),
+`team.name` VARCHAR(255),
+PRIMARY KEY (id));
