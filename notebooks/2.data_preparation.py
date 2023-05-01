@@ -11,7 +11,7 @@
 # In[ ]:
 
 
-# Libraries installation
+# INSTALL LIBRARIES
 # ==============================================================================
 # !pip install pandas
 # !pip install numpy
@@ -20,6 +20,8 @@
 
 # In[1]:
 
+
+# IMPORT LIBRARIES
 
 # Data processing
 # ==============================================================================
@@ -46,10 +48,10 @@ def read_json_file(file):  # `file`is the name of the JSON file
     return json.loads(response)
 
 
-# In[8]:
+# In[3]:
 
 
-# The above code is creating a list of dictionaries and then converting it to a dataframe anda saving as a csv file.
+# The above code is creating a list of dictionaries and then converting it to a dataframe and saving as a csv file.
 def csv_file(
     open_file, ubi, csv_file_name
 ):  # `open_file` is the result of applying the read_json_file, `ubi` is the name in string of the folder where we want to save the file, `csv_file_name` is the name of the CSV_file, must be a string.
@@ -66,31 +68,31 @@ def csv_file(
 
 # ## 2.1 Teams
 
+# In[4]:
+
+
+all_teams = read_json_file("../sample/data/teams.json")
+
+
 # In[5]:
 
 
-all_teams = read_json_file("../data/teams.json")
+teams_csv = csv_file(all_teams, "../sample/data/", "teams")
 
 
-# In[7]:
-
-
-teams_csv = csv_file(all_teams, "../data/", "teams")
-
-
-# In[9]:
+# In[6]:
 
 
 teams_csv.tail()
 
 
-# In[10]:
+# In[7]:
 
 
 teams_csv.columns
 
 
-# In[11]:
+# In[8]:
 
 
 teams_csv.shape
@@ -98,43 +100,37 @@ teams_csv.shape
 
 # ## 2.2 Games
 
-# In[12]:
+# In[9]:
 
 
-all_games = read_json_file("../data/games.json")
+all_games = read_json_file("../sample/data/games.json")
 
 
-# In[20]:
+# In[10]:
 
 
-games_csv = csv_file(all_games, "../data/", "games")
+games_csv = csv_file(all_games, "../sample/data/", "games")
 
 
-# In[21]:
+# In[11]:
 
 
 games_csv.tail()
 
 
-# In[22]:
+# In[12]:
 
 
 games_csv.info()
 
 
-# In[23]:
+# In[13]:
 
 
 games_csv.columns
 
 
-# In[24]:
-
-
-games_csv.tail()
-
-
-# In[25]:
+# In[14]:
 
 
 games_csv.shape
@@ -142,43 +138,43 @@ games_csv.shape
 
 # ## 2.3 Players
 
-# In[13]:
-
-
-all_players = read_json_file("../data/players.json")
-
-
-# In[14]:
-
-
-players_csv = csv_file(all_players, "../data/", "players")
-
-
 # In[15]:
 
 
-players_csv.head()
+all_players = read_json_file("../sample/data/players.json")
 
 
 # In[16]:
 
 
-players_csv.tail()
+players_csv = csv_file(all_players, "../sample/data/", "players")
 
 
-# In[26]:
+# In[17]:
 
 
-players_csv.shape
+players_csv.head()
 
 
 # In[18]:
 
 
+players_csv.tail()
+
+
+# In[20]:
+
+
+players_csv.shape
+
+
+# In[21]:
+
+
 players_csv.columns
 
 
-# In[19]:
+# In[22]:
 
 
 players_csv.info()

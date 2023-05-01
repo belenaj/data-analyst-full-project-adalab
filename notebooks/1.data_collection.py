@@ -18,7 +18,7 @@
 # - Reducing the number of API calls to the maximum. There is a parameter to increase the number of items retrieved in each API call. By modifying it, you can reduce the total number of API Calls
 # - API Search/Query: Read the docs carefully
 
-# In[120]:
+# In[35]:
 
 
 # INSTALL LIBRARIES
@@ -30,7 +30,7 @@
 # !pip install jupyter
 
 
-# In[1]:
+# In[36]:
 
 
 # IMPORT LIBRARIES
@@ -58,7 +58,7 @@ pd.options.display.max_columns = None
 
 # `` Create one reusable (shared across exercises) python function called paginate_api_calls that will handle the pagination of the API. It will accept two arguments (url, parameters) ``
 
-# In[2]:
+# In[37]:
 
 
 # The above code is creating a function that is going to be used to paginate the API calls.
@@ -114,7 +114,7 @@ def paginate_api_calls(
         return results
 
 
-# In[3]:
+# In[38]:
 
 
 # To obtein information abour the status of the API call
@@ -147,7 +147,7 @@ def check_api_call(url, params):
 
 # ``Create one reusable python function called write_json_file that will write the responses to disk``
 
-# In[23]:
+# In[39]:
 
 
 # The above code is taking the results from the API call and writing them to a json file.
@@ -172,7 +172,7 @@ def write_json_file(
 # - https://www.balldontlie.io/home.html#get-all-teams
 # - Bear in mind pagination. It is possible to pass additional arguments to the API call.
 
-# In[5]:
+# In[40]:
 
 
 # url and params to the API call
@@ -180,41 +180,35 @@ TEAMS_URL = "https://www.balldontlie.io/api/v1/teams"
 teams_params = {}  # It must be a dictionary
 
 
-# In[6]:
+# In[41]:
 
 
 # Function to the API call
 teams = paginate_api_calls(TEAMS_URL, teams_params)
 
 
-# In[7]:
+# In[42]:
 
 
 check_api_call(TEAMS_URL, teams_params)
 
 
-# In[8]:
+# In[43]:
 
 
-teams
+all_teams = write_json_file(teams, "../sample/data/teams")
 
 
-# In[9]:
+# In[44]:
 
 
-all_teams = write_json_file(teams, "../data/teams/teams")
-
-
-# In[10]:
-
-
-all_teams
+print(all_teams)
 
 
 # ## Exercise 1.2
 # - It is required to obtain all games of the 1991-1992 season. No need to rename/remove fields from the response.
 
-# In[11]:
+# In[45]:
 
 
 # url and params to the API call
@@ -222,41 +216,35 @@ GAMES_URL = "https://www.balldontlie.io/api/v1/games"
 games_params = {"seasons[]": 1991, "per_page": 100}  # It must be a dictionary
 
 
-# In[12]:
+# In[46]:
 
 
 # Function to the API call
 games = paginate_api_calls(GAMES_URL, games_params)
 
 
-# In[13]:
+# In[47]:
 
 
 check_api_call(GAMES_URL, games_params)
 
 
-# In[14]:
+# In[48]:
 
 
-games
+all_games_1991 = write_json_file(games, "../sample/data/games")
 
 
-# In[15]:
+# In[49]:
 
 
-all_games_1991 = write_json_file(games, "../data/games/games")
-
-
-# In[16]:
-
-
-all_games_1991
+print(all_games_1991)
 
 
 # ## Exercise 1.3
 # - It is required to obtain all players. No need to rename/remove fields from the response.
 
-# In[17]:
+# In[50]:
 
 
 # url and params to the API call
@@ -264,32 +252,26 @@ PLAYERS_URL = "https://www.balldontlie.io/api/v1/players"
 players_params = {"per_page": 100}  # It must be a dictionary
 
 
-# In[18]:
+# In[51]:
 
 
 # Function to the API call
 players = paginate_api_calls(PLAYERS_URL, players_params)
 
 
-# In[19]:
+# In[55]:
 
 
 check_api_call(PLAYERS_URL, players_params)
 
 
-# In[20]:
+# In[53]:
 
 
-players
+all_players = write_json_file(players, "../sample/data/players")
 
 
-# In[21]:
-
-
-all_players = write_json_file(players, "../data/players/players")
-
-
-# In[22]:
+# In[54]:
 
 
 print(all_players)
